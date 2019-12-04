@@ -16,7 +16,7 @@ namespace day_4
     {
         [FunctionName("ListFoodDishesHttp")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "food")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "food")] HttpRequest req,
             [Table(Constants.TableName)] CloudTable foodDishTable)
         {
             var query = new TableQuery<FoodDishTableEntity>();

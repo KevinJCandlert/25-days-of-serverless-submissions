@@ -17,7 +17,7 @@ namespace day_4.Functions
     {
         [FunctionName("UpdateFoodDishHttp")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "put", Route = "food/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "food/{id}")] HttpRequest req,
             [Table(Constants.TableName)] CloudTable foodDishTable,
             [Table(Constants.TableName, Constants.PartitionKey, "{id}")] FoodDishTableEntity foodDishTableEntity,
             ILogger log)

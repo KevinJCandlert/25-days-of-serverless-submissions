@@ -16,7 +16,7 @@ namespace day_4
     {
         [FunctionName("DeleteFoodDishHttp")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "food/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "food/{id}")] HttpRequest req,
             [Table(Constants.TableName)] CloudTable foodDishTable,
             [Table(Constants.TableName, Constants.PartitionKey, "{id}")] FoodDishTableEntity foodDishTableEntity,
             ILogger log)

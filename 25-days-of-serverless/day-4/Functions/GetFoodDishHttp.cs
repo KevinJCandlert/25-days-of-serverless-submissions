@@ -16,7 +16,7 @@ namespace day_4
     {
         [FunctionName("GetFoodDishHttp")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "food/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "food/{id}")] HttpRequest req,
             [Table(Constants.TableName, Constants.PartitionKey, "{id}")] FoodDishTableEntity foodDishTableEntity)
         {
             if (foodDishTableEntity == null)

@@ -22,7 +22,7 @@ namespace day_4
     {
         [FunctionName("AddFoodDishHttp")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "food")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "food")] HttpRequest req,
             [Table(Constants.TableName)] IAsyncCollector<FoodDishTableEntity> foodDishesTable,
             ILogger log)
         {
